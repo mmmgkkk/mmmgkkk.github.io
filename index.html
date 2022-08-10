@@ -6,7 +6,7 @@
     <meta name="description" content="웹 표준을 준수한 사이트 예제입니다.">
     <meta name="keywords" content="웹스토리보이, 웹표준, 웹접근성, 사이트 만들기">
     <meta name="generator" content="brakets">
-    <title>최민기 웹표준 22.08.06</title>
+    <title>최민기 웹표준 22.08.10</title>
 
     <!-- CSS STYLE -->
     <link rel="stylesheet" href="css/reset.css">
@@ -272,7 +272,7 @@
                       <div class="popup">
                         <h4>Advertisement</h4>
                         <ul>
-                          <li><a href="#"><img src="img/sban07.jpg" alt="이미지1"></a></li>
+                          <li class="layer"><a href="#"><img src="img/sban07.jpg" alt="이미지1"></a></li>
                           <li><a href="#"><img src="img/sban08.jpg" alt="이미지2"></a></li>
                           <li><a href="#"><img src="img/sban09.jpg" alt="이미지3"></a></li>
                         </ul>
@@ -460,10 +460,33 @@
     </div>
     <!-- //wrap -->
 
+    <!-- layer popup -->
+    <div id="layer">
+      <img src="img/webstandard1.jpg" alt="웹표준 사이트">
+      <a href="#" class="close">Close</a>
+    </div>
+    <!-- //layer popup -->
+
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script type="text/javascript">
+        //레이어 팝업
+        $(".layer").click(function(e){
+          e.preventDefault();
+          //$("#layer").css("display","block");
+          //$("#layer").show();
+          //$("#layer").fadeIn();
+          $("#layer").slideDown(200);
+        });
+        $("#layer .close").click(function(e){
+          e.preventDefault();
+          //$("#layer").css("display","block");
+          //$("#layer").show();
+          //$("#layer").fadeOut();
+          $("#layer").slideUp(200);
+        });
+
         //탭메뉴
         var $tab_list = $(".tab_menu");
         
